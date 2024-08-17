@@ -5,9 +5,15 @@
     {
         echo "<center><img src=\"./images/horse.jpg\"><hr>";
 
-    	if(isset($_GET["file"]) && file_exists($_GET["file"] . ".php"))
+    	if(isset($_GET["file"]))
     	{
-            include $_GET["file"] . ".php";
+            if(file_exists(__DIR__ . $_GET["file"] . ".php"))
+            {
+                include __DIR__ . $_GET["file"] . ".php";
+            }
+            else {
+                echo "<h1>The file \"" . __DIR__ . htmlspecialchars($_GET["file"]) . ".php\" does not exist.</h1>";
+            }
             echo "<hr>";
     	}
 
