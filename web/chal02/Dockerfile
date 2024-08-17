@@ -4,6 +4,9 @@ FROM php:8.2.1-apache
 # Copy your PHP project into the container
 COPY ./index.php /var/www/html/index.php
 
+# Copy the custom PHP configuration file into the container
+COPY ./custom-php.ini /usr/local/etc/php/conf.d/custom-php.ini
+
 COPY ./images/horse.jpg /var/www/html/images/horse.jpg
 
 # Ensure proper permissions
