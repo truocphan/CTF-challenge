@@ -1,0 +1,10 @@
+services:
+  php:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: web-chal03
+    working_dir: /var/www/html
+    ports:
+      - "80:80"
+    command: ["php", "-S", "0.0.0.0:80"]
