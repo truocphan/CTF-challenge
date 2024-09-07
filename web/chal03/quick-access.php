@@ -1,7 +1,7 @@
 <?php
 	if(isset($_GET["debug"]))
-        highlight_file(__FILE__);
-    else {
+		highlight_file(__FILE__);
+	else {
 		session_start();
 
 		function Password_Random_Nfc_Generator() {
